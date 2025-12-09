@@ -82,9 +82,8 @@ too - it's ignored in the kickstart repo to make maintenance easier, but it's
 <a href="https://www.nushell.sh/">Nushell</a>
   
 ```sh
-git clone https://github.com/nvim-lua/kickstart.nvim.git (
-    $env.XDG_CONFIG_HOME? // ($env.HOME | path join .config) | path join nvim
-)
+let nvim_config_folder_path = ($env.XDG_CONFIG_HOME? | default ($env.HOME | path join .config)) | path join nvim
+git clone https://github.com/nvim-lua/kickstart.nvim.git $nvim_config_folder_path
 ```
 
 </details>
