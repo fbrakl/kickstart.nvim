@@ -78,6 +78,16 @@ too - it's ignored in the kickstart repo to make maintenance easier, but it's
 > If following the recommended step above (i.e., forking the repo), replace
 > `nvim-lua` with `<your_github_username>` in the commands below
 
+<details><summary> Nushell </summary>
+<a href="https://www.nushell.sh/">Nushell</a>
+  
+```sh
+let nvim_config_folder_path = ($env.XDG_CONFIG_HOME? | default ($env.HOME | path join .config)) | path join nvim
+git clone https://github.com/nvim-lua/kickstart.nvim.git $nvim_config_folder_path
+```
+
+</details>
+
 <details><summary> Linux and Mac </summary>
 
 ```sh
